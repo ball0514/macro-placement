@@ -28,26 +28,38 @@ export default function Home() {
     });
 
     const second = cat[1].replace(";", "").replace("\n", "").split("\n");
+    // let square2 = [];
+    // second.map((obj) => {
+    //   const str = obj.split(" ");
+    //   let item = [];
+    //   str.map((value) => {
+    //     item.push(JSON.parse(value));
+    //   });
+    //   square2.push(item);
+    // });
+    // setSecondSquares(square2);
     let square2 = [];
     second.map((obj) => {
       const str = obj.split(" ");
-      let item = [];
-      str.map((value) => {
-        item.push(JSON.parse(value));
-      });
-      square2.push(item);
+      square2.push(str);
     });
     setSecondSquares(square2);
 
     const third = cat[2].replace(";", "").replace("\n", "").split("\n");
+    // let square3 = [];
+    // third.map((obj) => {
+    //   const str = obj.split(" ");
+    //   let item = [];
+    //   str.map((value) => {
+    //     item.push(JSON.parse(value));
+    //   });
+    //   square3.push(item);
+    // });
+    // setThirdSquares(square3);
     let square3 = [];
     third.map((obj) => {
       const str = obj.split(" ");
-      let item = [];
-      str.map((value) => {
-        item.push(JSON.parse(value));
-      });
-      square3.push(item);
+      square3.push(str);
     });
     setThirdSquares(square3);
 
@@ -151,27 +163,28 @@ export default function Home() {
           {secondSquares?.map((square, index) => (
             <div
               key={index}
-              title={`編號${index + 1}
-座標：(${square[0]} , ${square[1]})
-寬：${square[2]}
-高：${square[3]}`}
+              title={`${square[0]}
+座標：(${square[1]} , ${square[2]})
+寬：${square[3]}
+高：${square[4]}`}
               style={{
                 position: "absolute",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                width: `${number * square[2]}px`,
-                height: `${number * square[3]}px`,
+                width: `${number * square[3]}px`,
+                height: `${number * square[4]}px`,
                 border: "0.5px solid",
                 color: "gray",
                 backgroundColor: "rgba(211, 211, 211, 0.5)",
                 fontSize: "1.5rem",
                 fontWeight: "bold",
-                left: `${number * square[0]}px`,
-                top: `${number * square[1]}px`,
+                left: `${number * square[1]}px`,
+                top: `${number * square[2]}px`,
               }}
             >
-              {/* ({square[0]} , {square[1]}) */}灰{index + 1}
+              {/* ({square[0]} , {square[1]}) */}
+              {square[0]}
             </div>
           ))}
 
@@ -180,27 +193,28 @@ export default function Home() {
           {thirdSquares?.map((square, index) => (
             <div
               key={index}
-              title={`編號${index + 1}
-座標：(${square[0]} , ${square[1]})
-寬：${square[2]}
-高：${square[3]}`}
+              title={`${square[0]}
+座標：(${square[1]} , ${square[2]})
+寬：${square[3]}
+高：${square[4]}`}
               style={{
                 position: "absolute",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                width: `${number * square[2]}px`,
-                height: `${number * square[3]}px`,
+                width: `${number * square[3]}px`,
+                height: `${number * square[4]}px`,
                 border: "0.5px solid",
                 color: "green",
                 backgroundColor: "rgba(144, 238, 144, 0.5)",
                 fontSize: "1.5rem",
                 fontWeight: "bold",
-                left: `${number * square[0]}px`,
-                top: `${number * square[1]}px`,
+                left: `${number * square[1]}px`,
+                top: `${number * square[2]}px`,
               }}
             >
-              {/* ({square[0]} , {square[1]}) */}綠{index + 1}
+              {/* ({square[0]} , {square[1]}) */}
+              {square[0]}
             </div>
           ))}
         </div>
