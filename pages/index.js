@@ -137,7 +137,7 @@ export default function Home() {
                 border: "3px solid",
                 left: `${number * firstSquare.x1}px`,
                 top: `${number * firstSquare.y1}px`,
-                zIndex: 100,
+                // zIndex: 100,
                 // transform: `translateY(${-(5 * square.y)}px)`,
               }}
             >
@@ -151,6 +151,10 @@ export default function Home() {
           {secondSquares?.map((square, index) => (
             <div
               key={index}
+              title={`編號${index + 1}
+座標：(${square[0]} , ${square[1]})
+寬：${square[2]}
+高：${square[3]}`}
               style={{
                 position: "absolute",
                 display: "flex",
@@ -160,13 +164,14 @@ export default function Home() {
                 height: `${number * square[3]}px`,
                 border: "0.5px solid",
                 color: "gray",
-                backgroundColor: "lightgray",
-                opacity: "0.5",
+                backgroundColor: "rgba(211, 211, 211, 0.5)",
+                fontSize: "1.5rem",
+                fontWeight: "bold",
                 left: `${number * square[0]}px`,
                 top: `${number * square[1]}px`,
               }}
             >
-              ({square[0]} , {square[1]})
+              {/* ({square[0]} , {square[1]}) */}灰{index + 1}
             </div>
           ))}
 
@@ -175,6 +180,10 @@ export default function Home() {
           {thirdSquares?.map((square, index) => (
             <div
               key={index}
+              title={`編號${index + 1}
+座標：(${square[0]} , ${square[1]})
+寬：${square[2]}
+高：${square[3]}`}
               style={{
                 position: "absolute",
                 display: "flex",
@@ -184,13 +193,14 @@ export default function Home() {
                 height: `${number * square[3]}px`,
                 border: "0.5px solid",
                 color: "green",
-                backgroundColor: "lightgreen",
-                opacity: "0.5",
+                backgroundColor: "rgba(144, 238, 144, 0.5)",
+                fontSize: "1.5rem",
+                fontWeight: "bold",
                 left: `${number * square[0]}px`,
                 top: `${number * square[1]}px`,
               }}
             >
-              ({square[0]} , {square[1]})
+              {/* ({square[0]} , {square[1]}) */}綠{index + 1}
             </div>
           ))}
         </div>
