@@ -7,7 +7,7 @@ export default function Home() {
   const [secondSquares, setSecondSquares] = useState([]);
   const [thirdSquares, setThirdSquares] = useState([]);
   const [number, setNumber] = useState(0.5);
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
 
   const create = (e) => {
     e.preventDefault();
@@ -105,7 +105,6 @@ export default function Home() {
   };
 
   const display = (e) => {
-    console.log(e.target.checked);
     setShow(e.target.checked);
   };
 
@@ -135,7 +134,7 @@ export default function Home() {
           placeholder="預設值是0.5"
           onChange={size}
         />
-        <input id="show" type="checkbox" onChange={display} />
+        <input id="show" type="checkbox" onChange={display} checked={show} />
         <label htmlFor="show">顯示名稱</label>
         <div
           id="container"
